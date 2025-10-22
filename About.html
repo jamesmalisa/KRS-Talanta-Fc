@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About KRS Talanta Football Academy - Learn more about our mission, vision, and values.">
+    <meta name="keywords" content="about, KRS Talanta Football Academy, football academy, Tanzania, youth development, football training, sports academy">
+    <meta property="og:title" content="About Us | KRS Talanta Football Academy">
+    <meta property="og:description" content="Learn more about our mission, vision, and values.">
+    <meta property="og:type" content="website">
+    <title>About Us | KRS Talanta Football Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Navbar styles */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: white;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+            color: #374151;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #DC2626;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        /* Mobile menu styles */
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        .mobile-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #374151;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu a:hover {
+            color: #DC2626;
+            background-color: #F9FAFB;
+            border-radius: 0.5rem;
+        }
+
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Skip Navigation for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-red-600 text-white px-4 py-2 rounded-lg z-50">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="max-w-7xl mx-auto">
+            <div class="container flex justify-between items-center py-4">
+                <!-- Logo Section -->
+                <div class="flex items-center space-x-2 sm:space-x-3">
+                    <img src="img/krs-football-club-logo.png" alt="KRS Talanta Football Academy Logo" class="w-10 h-10 sm:w-12 sm:h-12 object-contain">
+                    <div>
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-900">KRS Talanta</h3>
+                        <p class="text-xs sm:text-sm text-gray-600">Football Academy</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation Links -->
+                <ul class="hidden md:flex items-center space-x-6 lg:space-x-8" role="menubar">
+                    <li role="none"><a href="index.html#home" role="menuitem" class="nav-link">Home</a></li>
+                    <li role="none"><a href="index.html#news" role="menuitem" class="nav-link">News</a></li>
+                    <li role="none"><a href="Gallery.html" role="menuitem" class="nav-link">Gallery</a></li>
+                    <li role="none"><a href="index.html#about" role="menuitem" class="nav-link">About</a></li>
+                </ul>
+                
+                <!-- Contact Button - Hidden on small screens -->
+                <div class="hidden md:block">
+                    <a href="contact.html" class="bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 hover:shadow-lg transition duration-300 transform hover:-translate-y-1 px-4 lg:px-5 py-2 lg:py-3 text-sm lg:text-base" aria-label="Contact KRS Talanta Academy">
+                        <span>Contact Us</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700 hover:text-gray-900 transition-colors" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#news">News</a>
+                <a href="Gallery.html">Gallery</a>
+                <a href="index.html#about">About</a>
+                <button class="w-full bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 transition duration-300 px-4 py-3 mt-4" aria-label="Contact KRS Talanta Academy">
+                    Contact Us
+                </button>
+            </div>
+        </div>
+    </nav>
+
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gray-100">
+            <div id="main-content" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-8 p-12 h-[45vh] flex items-center justify-center relative">
+                    <!-- Background Image -->
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('img/Gallery/team-photo.jpg'); filter: brightness(0.3);"></div>
+                    <h1 class="text-4xl sm:text-5xl font-bold text-white mb-6 text-center text-gradient relative z-10">About KRS</h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story Section -->
+        <section class="py-16">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <!-- Text Content -->
+                    <div class="space-y-6">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Story</h2>
+                        <p class="text-gray-700">KRS Talanta Football Academy is dedicated to nurturing young football talent in Tanzania. Our mission is to provide high-quality training, education, and opportunities for aspiring footballers to reach their full potential both on and off the field.</p>
+                        <p class="text-gray-700">Founded in 2018, our academy has a rich history of developing skilled players who have gone on to achieve success at various levels of the sport. We believe in fostering a positive and inclusive environment where players can grow, learn, and thrive.</p>
+                        <p class="text-gray-700">Our vision is to become a leading football academy in Africa, known for excellence in training, player development, and community engagement.</p>
+                    </div>
+
+                    <!-- Image Section -->
+                    <div class="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
+                        <img src="img/Gallery/11.webp" alt="KRS Training Session" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Values/Highlights Section -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Excellence</h3>
+                        <p class="text-gray-600">Committed to maintaining high standards in training and development</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Community</h3>
+                        <p class="text-gray-600">Building strong relationships and fostering local talent</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2v16z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Education</h3>
+                        <p class="text-gray-600">Developing both athletic and academic abilities</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competitions Section -->
+        <section id="competitions" class="py-16">
+            <div class="text-center mb-8">
+                <h2 id="competitions-heading" class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">Competitions & Achievements</h2>
+                <p class="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
+                    KRS Talanta regularly competes at regional and national youth tournaments and organizes annual inter-academy fixtures.
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-1 gap-6">
+                <div class="bg-white shadow-lg rounded-2xl p-8 border border-gray-100 mb-10 hover:shadow-xl transition duration-300">
+                    <h3 class="text-2xl font-semibold mb-4">Major Tournaments Entered</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start gap-3"><span class="text-red-600 font-bold">•</span> National Youth Cup — multiple seasons</li>
+                        <li class="flex items-start gap-3"><span class="text-red-600 font-bold">•</span> Dar Regional League — U14, U16, U18 categories</li>
+                        <li class="flex items-start gap-3"><span class="text-red-600 font-bold">•</span> Inter-Academy Invitational — annual participation</li>
+                        <li class="flex items-start gap-3"><span class="text-red-600 font-bold">•</span> Community Shield — friendly competition with partner clubs</li>
+                    </ul>
+                </div>
+
+                    <h3 class="text-2xl font-semibold mb-6 text-center">Notable Achievements</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <!-- Achievement Card 1 -->
+                        <div class="relative overflow-hidden rounded-lg h-75 group">
+                            <img src="img/Gallery/16.webp" alt="Regional Champions" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20 flex flex-col justify-end p-4 transition-all duration-300">
+                                <h4 class="text-white font-bold text-lg">Ndondo Cup</h4>
+                                <p class="text-gray-200 text-sm">2022</p>
+                                <p class="text-gray-300 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    Our U16 team dominated the regional championship, showcasing exceptional talent and teamwork.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Achievement Card 2 -->
+                        <div class="relative overflow-hidden rounded-lg h-75 group">
+                            <img src="img/Gallery/5.jpg" alt="Sportsmanship Award" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20 flex flex-col justify-end p-4 transition-all duration-300">
+                                <h4 class="text-white font-bold text-lg">Best Academy Sportsmanship</h4>
+                                <p class="text-gray-200 text-sm">2023</p>
+                                <p class="text-gray-300 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    Recognized for exemplary conduct and fair play across all age groups.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Achievement Card 3 -->
+                        <div class="relative overflow-hidden rounded-lg h-75 group">
+                            <img src="img/Gallery/4.jpg" alt="Professional Progress" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20 flex flex-col justify-end p-4 transition-all duration-300">
+                                <h4 class="text-white font-bold text-lg">Professional Development</h4>
+                                <p class="text-gray-200 text-sm">Ongoing</p>
+                                <p class="text-gray-300 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    Multiple academy graduates now playing in semi-professional leagues.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Leadership Section -->
+
+            <section id="leadership" class="py-16 bg-gray-50">
+                <div class="text-center mb-8">
+                    <h2 id="leadership-heading" class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3">Executive Leadership</h2>
+                    <p class="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
+                        Our leadership team combines experienced coaches and administrators committed to athlete development and organisational growth.
+                    </p>
+                </div>
+
+                <div class="max-w-7xl mx-auto px-4 py-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Chair -->
+                    <div class="card text-center hover:shadow-lg transition-shadow p-6 bg-white rounded-lg">
+                        <img src="img/krs-football-club-logo.png" alt="Chair photo" class="mx-auto w-30 h-30 object-contain rounded-full mb-4">
+                        <h4 class="font-semibold text-lg">Chairperson</h4>
+                        <p class="text-sm text-gray-600">Mr. Kheri Kajuna</p>
+                        <p class="mt-2 text-gray-700 text-sm">Provides strategic direction and partnerships for the academy.</p>
+                    </div>
+    
+                    <!-- Head Coach -->
+                    <div class="card text-center hover:shadow-lg transition-shadow p-6 bg-white rounded-lg">
+                        <img src="img/krs-football-club-logo.png" alt="Head coach photo" class="mx-auto w-30 h-30 object-cover rounded-full mb-4">
+                        <h4 class="font-semibold text-lg">Head Coach</h4>
+                        <p class="text-sm text-gray-600">Coach Khalid Ngata</p>
+                        <p class="mt-2 text-gray-700 text-sm">Leads training curriculum, player development and coaching staff.</p>
+                    </div>
+    
+                    <!-- Technical Director -->
+                    <div class="card text-center hover:shadow-lg transition-shadow p-6 bg-white rounded-lg">
+                        <img src="img/krs-football-club-logo.png" alt="Technical director photo" class="mx-auto w-30 h-30 object-cover rounded-full mb-4">
+                        <h4 class="font-semibold text-lg">Technical Director</h4>
+                        <p class="text-sm text-gray-600">Mr. Shadrack Kapaya</p>
+                        <p class="mt-2 text-gray-700 text-sm">Oversees talent ID, coaching standards and performance analysis.</p>
+                    </div>
+    
+                    <!-- Operations Manager -->
+                    <div class="card text-center hover:shadow-lg transition-shadow p-6 bg-white rounded-lg">
+                        <img src="img/krs-football-club-logo.png" alt="Operations manager photo" class="mx-auto w-30 h-30 object-cover rounded-full mb-4">
+                        <h4 class="font-semibold text-lg">Operations Manager</h4>
+                        <p class="text-sm text-gray-600">Mr. David Mwakyusa</p>
+                        <p class="mt-2 text-gray-700 text-sm">Manages day-to-day operations, logistics and community outreach.</p>
+                    </div>
+                </div>
+            </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12 sm:py-16" role="contentinfo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 sm:mb-12">
+                <!-- Academy Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4 sm:mb-6">
+                        <img src="img/krs-football-club-logo.png" alt="KRS Talanta Football Academy Logo" class="w-8 h-8 sm:w-10 sm:h-10 object-contain">
+                        <div>
+                            <h3 class="text-base sm:text-lg font-bold text-white">KRS Talanta</h3>
+                            <p class="text-xs sm:text-sm text-gray-300">Football Academy</p>
+                        </div>
+                    </div>
+                    <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
+                        Developing Tanzania's future football stars through world-class coaching and community values.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-base sm:text-lg font-semibold text-white mb-4 sm:mb-6">Quick Links</h4>
+                    <ul class="space-y-2 sm:space-y-3">
+                        <li><a href="index.html" class="text-sm sm:text-base text-gray-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-sm sm:text-base text-gray-300 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="index.html#news" class="text-sm sm:text-base text-gray-300 hover:text-white transition-colors">News</a></li>
+                        <li><a href="gallery.html" class="text-sm sm:text-base text-gray-300 hover:text-white transition-colors">Gallery</a></li>
+                        <li><a href="index.html#fixtures" class="text-sm sm:text-base text-gray-300 hover:text-white transition-colors">Fixtures</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-base sm:text-lg font-semibold text-white mb-4 sm:mb-6">Contact Us</h4>
+                    <div class="space-y-2 sm:space-y-3 text-sm sm:text-base">
+                        <p class="text-gray-300">
+                            <span class="font-medium">Email:</span> info@krstalanta.com
+                        </p>
+                        <p class="text-gray-300">
+                            <span class="font-medium">Phone:</span> +255 XXX XXX XXX
+                        </p>
+                        <p class="text-gray-300">
+                            <span class="font-medium">Address:</span><br>
+                            National Stadium<br>
+                            Dar es Salaam, Tanzania
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Social Media -->
+                <div>
+                    <h4 class="text-base sm:text-lg font-semibold text-white mb-4 sm:mb-6">Follow Us</h4>
+                    <div class="flex flex-wrap gap-3 sm:gap-4">
+                        <!-- Facebook -->
+                        <a href="#" class="social-link" aria-label="Follow us on Facebook">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z" clip-rule="evenodd"/>
+                            </svg>
+                        </a>
+                        <!-- Twitter -->
+                        <a href="#" class="social-link" aria-label="Follow us on Twitter">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.795 10.533 20.68 2h-3.073l-5.255 6.517L7.69 2H1l7.806 10.91L1.47 22h3.074l5.705-7.07L15.31 22H22l-8.205-11.467Zm-2.38 2.95L9.97 11.464 4.36 3.627h2.31l4.528 6.317 1.443 2.02 6.018 8.409h-2.31l-4.934-6.89Z"/>
+                            </svg>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/krstalantafc/" class="social-link" aria-label="Follow us on Instagram">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
+                            </svg>
+                        </a>
+                        <!-- LinkedIn -->
+                        <a href="#" class="social-link" aria-label="Follow us on LinkedIn">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z" clip-rule="evenodd"/>
+                                <path d="M7.2 8.809H4V19.5h3.2V8.809Z"/>
+                            </svg>
+                        </a>
+                        <!-- YouTube -->
+                        <a href="#" class="social-link" aria-label="Subscribe to our YouTube channel">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M21.7 8.037a4.26 4.26 0 0 0-.789-1.964 2.84 2.84 0 0 0-1.984-.839c-2.767-.2-6.926-.2-6.926-.2s-4.157 0-6.928.2a2.836 2.836 0 0 0-1.983.839 4.225 4.225 0 0 0-.79 1.965 30.146 30.146 0 0 0-.2 3.206v1.5a30.12 30.12 0 0 0 .2 3.206c.094.712.364 1.39.784 1.972.604.536 1.38.837 2.187.848 1.583.151 6.731.2 6.731.2s4.161 0 6.928-.2a2.844 2.844 0 0 0 1.985-.84 4.27 4.27 0 0 0 .787-1.965 30.12 30.12 0 0 0 .2-3.206v-1.516a30.672 30.672 0 0 0-.202-3.206Zm-11.692 6.554v-5.62l5.4 2.819-5.4 2.801Z" clip-rule="evenodd"/>
+                            </svg>
+                        </a>
+                        <!-- TikTok -->
+                        <a href="#" class="social-link" aria-label="Follow us on TikTok">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-tiktok" viewBox="0 0 16 16">
+                                <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-700 pt-6 sm:pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-gray-300 text-xs sm:text-sm text-center md:text-left">
+                        &copy; 2025 KRS Talanta. All rights reserved.
+                    </p>
+                    <div class="flex space-x-4 sm:space-x-6">
+                        <a href="#" class="text-gray-300 hover:text-white text-xs sm:text-sm transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-300 hover:text-white text-xs sm:text-sm transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
