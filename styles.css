@@ -195,3 +195,7 @@
     scroll-behavior: auto;
   }
 }
+
+#home {
+  transition: background-image 1s ease-in-out;
+}

@@ -81,6 +81,117 @@
             border-radius: 0.5rem;
         }
 
+        /* Trophy animation */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .trophy-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Gradient text */
+        .text-gradient {
+            background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Card hover effects */
+        .achievement-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .achievement-card img {
+            transition: transform 0.6s ease;
+        }
+
+        .achievement-card:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Tournament card hover */
+        .tournament-card {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .tournament-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 0;
+            background: linear-gradient(to bottom, #DC2626, #991B1B);
+            transition: height 0.3s ease;
+        }
+
+        .tournament-card:hover::before {
+            height: 100%;
+        }
+
+        .tournament-card:hover {
+            padding-left: 1.75rem;
+            background-color: #FEF2F2;
+        }
+
+        /* Stats counter animation */
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stat-item {
+            animation: countUp 0.6s ease-out forwards;
+        }
+
+        /* Timeline styles */
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #DC2626, transparent);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -6px;
+            top: 8px;
+            width: 14px;
+            height: 14px;
+            background: #DC2626;
+            border: 3px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2);
+        }
+
     </style>
 </head>
 <body class="bg-white">
@@ -105,7 +216,7 @@
                     <li role="none"><a href="index.html#home" role="menuitem" class="nav-link">Home</a></li>
                     <li role="none"><a href="index.html#news" role="menuitem" class="nav-link">News</a></li>
                     <li role="none"><a href="Gallery.html" role="menuitem" class="nav-link">Gallery</a></li>
-                    <li role="none"><a href="index.html#about" role="menuitem" class="nav-link">About</a></li>
+                    <li role="none"><a href="About.html" role="menuitem" class="nav-link">About</a></li>
                 </ul>
                 
                 <!-- Contact Button - Hidden on small screens -->
@@ -128,7 +239,7 @@
                 <a href="index.html#home">Home</a>
                 <a href="index.html#news">News</a>
                 <a href="Gallery.html">Gallery</a>
-                <a href="index.html#about">About</a>
+                <a href="About.html">About</a>
                 <a href="contact.html" class="w-full bg-red-600 text-white text-center font-semibold rounded-lg shadow-md hover:bg-red-700 transition duration-300 px-4 py-3 mt-4" aria-label="Contact KRS Talanta Academy">
                     Contact Us
                 </a>
@@ -140,10 +251,10 @@
     <main>
         <!-- Hero Section -->
         <section class="bg-gray-100 ">
-            <div id="main-content" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-8 p-12 h-[45vh] flex items-center justify-center relative">
+            <div id="main-content" class="">
+                <div class="mb-8 p-12 h-[55vh] flex items-center justify-center relative">
                     <!-- Background Image -->
-                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('img/hero/IMG_3141.jpg'); filter: brightness(0.3);"></div>
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('img/Gallery/about.jpg'); filter: brightness(0.3);"></div>
                     <h1 class="text-4xl sm:text-5xl font-bold text-white mb-6 text-center text-gradient relative z-10">About KRS</h1>
                 </div>
             </div>
@@ -202,67 +313,216 @@
             </div>
         </section>
 
-        <!-- Competitions Section -->
-        <section id="competitions" class="py-16">
-            <div class="text-center mb-8">
-                <h2 id="competitions-heading" class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">Competitions & Achievements</h2>
-                <p class="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
-                    KRS Talanta regularly competes at regional and national youth tournaments and organizes annual inter-academy fixtures.
+       <!-- Competitions Section -->
+    <section id="competitions" class="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-12 sm:mb-16">
+                <div class="inline-block mb-4">
+                    <svg class="w-16 h-16 sm:w-20 sm:h-20 trophy-icon mx-auto text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C10.9 2 10 2.9 10 4v2H6v4c0 3.31 2.69 6 6 6s6-2.69 6-6V6h-4V4c0-1.1-.9-2-2-2zM4 18v2h16v-2H4z"/>
+                    </svg>
+                </div>
+                <h2 id="competitions-heading" class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+                    Competitions & <span class="text-gradient">Achievements</span>
+                </h2>
+                <p class="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    KRS Talanta regularly competes at regional and national youth tournaments and organizes annual inter-academy fixtures, building champions on and off the field.
                 </p>
             </div>
 
-            <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-1 gap-6">
-                <div class="bg-white shadow-lg rounded-2xl p-8 border border-gray-100 mb-10 hover:shadow-xl transition duration-300">
-                    <h3 class="text-2xl font-semibold mb-4">Major Tournaments Entered</h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start gap-3"><span class="text-red-600 font-bold">•</span> National Youth Cup — multiple seasons</li>
-                        <li class="flex items-start gap-3"><span class="text-red-600 font-bold">•</span> Dar Regional League — U14, U16, U18 categories</li>
-                        <li class="flex items-start gap-3"><span class="text-red-600 font-bold">•</span> Inter-Academy Invitational — annual participation</li>
-                        <li class="flex items-start gap-3"><span class="text-red-600 font-bold">•</span> Community Shield — friendly competition with partner clubs</li>
-                    </ul>
+            <!-- Stats Overview -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
+                <div class="stat-item bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300" style="animation-delay: 0.1s">
+                    <div class="text-3xl sm:text-4xl font-bold text-red-600 mb-2">3+</div>
+                    <div class="text-sm sm:text-base text-gray-600 font-medium">Trophies Won</div>
+                </div>
+                <div class="stat-item bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300" style="animation-delay: 0.2s">
+                    <div class="text-3xl sm:text-4xl font-bold text-red-600 mb-2">50+</div>
+                    <div class="text-sm sm:text-base text-gray-600 font-medium">Matches Played</div>
+                </div>
+                <div class="stat-item bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300" style="animation-delay: 0.3s">
+                    <div class="text-3xl sm:text-4xl font-bold text-red-600 mb-2">10+</div>
+                    <div class="text-sm sm:text-base text-gray-600 font-medium">Tournaments</div>
+                </div>
+                <div class="stat-item bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300" style="animation-delay: 0.4s">
+                    <div class="text-3xl sm:text-4xl font-bold text-red-600 mb-2">15</div>
+                    <div class="text-sm sm:text-base text-gray-600 font-medium">Pro Players</div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 sm:mb-16">
+                <!-- Major Tournaments -->
+                <div class="bg-white shadow-lg rounded-2xl p-6 sm:p-8 border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900">Major Tournaments</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="tournament-card bg-gray-50 rounded-lg p-4 pl-6">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">Kunduchi Tournament 2025</h4>
+                                    <p class="text-sm text-gray-600">Multiple seasons participation</p>
+                                </div>
+                                <span class="text-red-600 font-bold text-2xl">⚽</span>
+                            </div>
+                        </div>
+
+                        <div class="tournament-card bg-gray-50 rounded-lg p-4 pl-6">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">Ndondo Cup 2024</h4>
+                                    <p class="text-sm text-gray-600">Group stage</p>
+                                </div>
+                                <span class="text-red-600 font-bold text-2xl">🏆</span>
+                            </div>
+                        </div>
+
+                        <div class="tournament-card bg-gray-50 rounded-lg p-4 pl-6">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">Ndondo Cup 2023</h4>
+                                    <p class="text-sm text-gray-600">Quarter Finals</p>
+                                </div>
+                                <span class="text-red-600 font-bold text-2xl">🎯</span>
+                            </div>
+                        </div>
+
+                        <div class="tournament-card bg-gray-50 rounded-lg p-4 pl-6">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">Community Shield</h4>
+                                    <p class="text-sm text-gray-600">Friendly competition with partner clubs</p>
+                                </div>
+                                <span class="text-red-600 font-bold text-2xl">🤝</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                    <h3 class="text-2xl font-semibold mb-6 text-center">Notable Achievements</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        <!-- Achievement Card 1 -->
-                        <div class="relative overflow-hidden rounded-lg h-75 group">
-                            <img src="img/Gallery/16.webp" alt="Regional Champions" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20 flex flex-col justify-end p-4 transition-all duration-300">
-                                <h4 class="text-white font-bold text-lg">Ndondo Cup</h4>
-                                <p class="text-gray-200 text-sm">2022</p>
-                                <p class="text-gray-300 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                    Our U16 team dominated the regional championship, showcasing exceptional talent and teamwork.
-                                </p>
+                <!-- Recent Success Timeline -->
+                <div class="bg-white shadow-lg rounded-2xl p-6 sm:p-8 border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900">Recent Success</h3>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm font-semibold text-red-600">2025</span>
+                                    <span class="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full font-medium">ONGOING</span>
+                                </div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Professional Development</h4>
+                                <p class="text-sm text-gray-600">Multiple academy graduates now playing in semi-professional leagues</p>
                             </div>
                         </div>
 
-                        <!-- Achievement Card 2 -->
-                        <div class="relative overflow-hidden rounded-lg h-75 group">
-                            <img src="img/Gallery/5.jpg" alt="Sportsmanship Award" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20 flex flex-col justify-end p-4 transition-all duration-300">
-                                <h4 class="text-white font-bold text-lg">Best Academy Sportsmanship</h4>
-                                <p class="text-gray-200 text-sm">2023</p>
-                                <p class="text-gray-300 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                    Recognized for exemplary conduct and fair play across all age groups.
-                                </p>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm font-semibold text-red-600">2024</span>
+                                    <span class="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full font-medium">AWARD</span>
+                                </div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Best Academy Sportsmanship</h4>
+                                <p class="text-sm text-gray-600">Recognized for exemplary conduct and fair play across all age groups</p>
                             </div>
                         </div>
 
-                        <!-- Achievement Card 3 -->
-                        <div class="relative overflow-hidden rounded-lg h-75 group">
-                            <img src="img/Gallery/4.jpg" alt="Professional Progress" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20 flex flex-col justify-end p-4 transition-all duration-300">
-                                <h4 class="text-white font-bold text-lg">Professional Development</h4>
-                                <p class="text-gray-200 text-sm">Ongoing</p>
-                                <p class="text-gray-300 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                    Multiple academy graduates now playing in semi-professional leagues.
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm font-semibold text-red-600">2023</span>
+                                    <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-medium">QUARTER FINALS</span>
+                                </div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Ndondo Cup Winners</h4>
+                                <p class="text-sm text-gray-600">Our team dominated the regional championship with exceptional talent</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notable Achievements Gallery -->
+            <div class="bg-white shadow-lg rounded-2xl p-6 sm:p-8 border border-gray-100">
+                <div class="flex items-center mb-6 sm:mb-8">
+                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-gray-900">Memorable Moments</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Achievement Card 1 -->
+                    <div class="achievement-card relative overflow-hidden rounded-xl h-80 group shadow-lg">
+                        <img src="img/Gallery/16.webp" alt="Ndondo Cup Champions" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col justify-end p-6 transition-all duration-300">
+                            <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <span class="inline-block bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">2022 CHAMPION</span>
+                                <h4 class="text-white font-bold text-xl mb-2">Ndondo Cup</h4>
+                                <p class="text-gray-200 text-sm mb-3">Regional Championship Winners</p>
+                                <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    Our U16 team dominated the regional championship, showcasing exceptional talent and teamwork throughout the tournament.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievement Card 2 -->
+                    <div class="achievement-card relative overflow-hidden rounded-xl h-80 group shadow-lg">
+                        <img src="img/Gallery/5.jpg" alt="Sportsmanship Award" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col justify-end p-6 transition-all duration-300">
+                            <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <span class="inline-block bg-yellow-500 text-gray-900 text-xs font-bold px-3 py-1 rounded-full mb-3">2023 AWARD</span>
+                                <h4 class="text-white font-bold text-xl mb-2">Best Academy Sportsmanship</h4>
+                                <p class="text-gray-200 text-sm mb-3">Fair Play Recognition</p>
+                                <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    Recognized for exemplary conduct and fair play across all age groups, setting the standard for youth academies.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievement Card 3 -->
+                    <div class="achievement-card relative overflow-hidden rounded-xl h-80 group shadow-lg">
+                        <img src="img/Gallery/4.jpg" alt="Professional Progress" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col justify-end p-6 transition-all duration-300">
+                            <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <span class="inline-block bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">ONGOING</span>
+                                <h4 class="text-white font-bold text-xl mb-2">Professional Development</h4>
+                                <p class="text-gray-200 text-sm mb-3">Creating Future Stars</p>
+                                <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    Multiple academy graduates now playing in semi-professional leagues, proving our commitment to player development.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-12">
+                <p class="text-gray-600 mb-6 text-base sm:text-lg">Want to be part of our success story?</p>
+                <a href="contact.html" class="inline-block bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 hover:shadow-lg transition duration-300 transform hover:-translate-y-1 px-8 py-4 text-base sm:text-lg">
+                    Join Our Academy Today
+                </a>
+            </div>
+        </div>
+    </section>
         
         <!-- Leadership Section -->
 
