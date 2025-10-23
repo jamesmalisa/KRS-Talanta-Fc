@@ -307,6 +307,14 @@
             transition: opacity 1s ease-in-out;
             opacity: 1;
         }
+        #home {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background-image 0.5s ease-in-out;
+            /* Add a fallback background color that matches your design */
+            background-color: #1a1a1a; /* or whatever color fits your design */
+        }
     </style>
 </head>
 <body class="bg-white">
@@ -944,35 +952,53 @@ class="relative min-h-screen flex items-center justify-center text-center overfl
 
 
         // Array of images you want to rotate
-    const heroImages = [
-        'img/hero/IMG_9453.jpg',
-        'img/hero/IMG_3107.jpg',
-        'img/hero/IMG_3331.jpg',
-        'img/hero/IMG_9316.jpg',
-        'img/hero/IMG_3141.jpg',
-        'img/hero/_MG_9361.jpg',
-        'img/hero/_MG_9370.jpg',
-        'img/hero/IMG_6334.jpg',
-        'img/hero/IMG_6491.jpg',
-        'img/hero/IMG_6703.jpg',
-        'img/hero/IMG_8173.jpg'
-    ];
-    let currentIndex = 0;
-    const home = document.getElementById('home');
-    const layer = home.style;
+        const heroImages = [
+    'img/hero/IMG_9453.jpg',
+    'img/hero/IMG_3107.jpg',
+    'img/hero/IMG_3331.jpg',
+    'img/hero/IMG_9316.jpg',
+    'img/hero/IMG_3141.jpg',
+    'img/hero/_MG_9361.jpg',
+    'img/hero/_MG_9370.jpg',
+    'img/hero/IMG_6334.jpg',
+    'img/hero/IMG_6491.jpg',
+    'img/hero/IMG_6703.jpg',
+    'img/hero/IMG_8173.jpg'
+];
 
-    function updateBackground() {
-        const nextImage = heroImages[currentIndex];
+let currentIndex = 0;
+const home = document.getElementById('home');
 
-        // Crossfade using ::before
-        home.style.setProperty('--next-bg', `url('${nextImage}')`);
-        home.style.backgroundImage = `url('${nextImage}')`;
+// Preload all images
+function preloadImages(imageArray) {
+    return Promise.all(
+        imageArray.map(src => {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.onload = () => resolve(src);
+                img.onerror = reject;
+                img.src = src;
+            });
+        })
+    );
+}
 
-        currentIndex = (currentIndex + 1) % heroImages.length;
-    }
+function updateBackground() {
+    const nextImage = heroImages[currentIndex];
+    home.style.backgroundImage = `url('${nextImage}')`;
+    currentIndex = (currentIndex + 1) % heroImages.length;
+}
 
+// Initialize after preloading
+preloadImages(heroImages).then(() => {
+    updateBackground(); // Set first image
+    setInterval(updateBackground, 4000);
+}).catch(err => {
+    console.error('Error preloading images:', err);
+    // Fallback: start anyway
     updateBackground();
     setInterval(updateBackground, 4000);
+});
     </script>
 </body>
 </html>
