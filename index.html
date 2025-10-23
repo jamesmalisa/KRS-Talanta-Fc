@@ -292,6 +292,21 @@
                 width: 50px;
             }
         }
+
+        #home {
+             position: relative;
+            overflow: hidden;
+        }
+        #home::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: opacity 1s ease-in-out;
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="bg-white">
@@ -942,20 +957,22 @@ class="relative min-h-screen flex items-center justify-center text-center overfl
         'img/hero/IMG_6703.jpg',
         'img/hero/IMG_8173.jpg'
     ];
-
     let currentIndex = 0;
-    const heroSection = document.getElementById('home');
+    const home = document.getElementById('home');
+    const layer = home.style;
 
-    function changeBackground() {
-        heroSection.style.backgroundImage = `url('${heroImages[currentIndex]}')`;
-        currentIndex = (currentIndex + 1) % heroImages.length; // Loop back to first image
+    function updateBackground() {
+        const nextImage = heroImages[currentIndex];
+
+        // Crossfade using ::before
+        home.style.setProperty('--next-bg', `url('${nextImage}')`);
+        home.style.backgroundImage = `url('${nextImage}')`;
+
+        currentIndex = (currentIndex + 1) % heroImages.length;
     }
 
-    // First background when page loads
-    changeBackground();
-
-    // Change image every 6 seconds
-    setInterval(changeBackground, 4000);
+    updateBackground();
+    setInterval(updateBackground, 4000);
     </script>
 </body>
 </html>
